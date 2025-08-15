@@ -1,9 +1,12 @@
 pipipeline{
     agent any
     stages{
-         stage("GitHub checkout....") {
+        stage("GitHub checkout....") {
+
             steps {
+
                 script {
+
  
                     git branch: 'main', url: 'https://github.com/Docalexix/Python-Flask.git' 
                 }
@@ -32,5 +35,4 @@ pipipeline{
     
       }
 
-    }
 }
