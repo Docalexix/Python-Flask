@@ -1,4 +1,4 @@
-# command to build docker images
+# imperative command to build docker imagesAdd commentMore actions
 docker build -t <nameofdockerimage> .
 
 # command to remove docker images
@@ -35,3 +35,7 @@ docker ps -a
 # command to start & stop a container
 docker start <imageID>
 docker stop <imageID>
+
+### command to build a container and put an image inside it
+docker run --name alex-docker -dp 5001:5001 Docalexix/yellowimg 
+

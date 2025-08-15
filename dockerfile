@@ -1,13 +1,8 @@
 FROM python:alpine
-
+RUN mkdir /app
+ADD . /app
 WORKDIR /app
-
-COPY app.py ./
-COPY templates templates/
-COPY requirements.txt ./
-
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
+RUN pip install --upgrade pip
 EXPOSE 5001
-
-# Run app.py when the container launches forreal
-CMD ["python", "app.py"]
+CMD ["python","app.py"]

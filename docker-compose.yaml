@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  python-flask:
+    build: .
+    image: Docalexix/goldimg
+    restart: unless-stopped
+    privileged: true
+    user: root
+    ports:
+      - 5001:5001
+    container_name: alex-docker
