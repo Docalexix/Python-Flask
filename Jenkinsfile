@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh 'printenv'
                 sh 'git version'
-                sh 'docker build . -t Docalexix/silverimg'
+                sh 'docker build . -t docalexix/silverimg'
             }
         }
          stage("push image to DockerHub"){
@@ -22,9 +22,9 @@ pipeline{
                script {
                   
                  withCredentials([string(credentialsId: 'alexID', variable: 'alexID')]) {
-                    sh 'docker login -u Docalexix -p ${alexID}'
+                    sh 'docker login -u docalexix -p ${alexID}'
             }
-              sh 'docker push Docalexix/silverimg:latest'
+              sh 'docker push docalexix/silverimg:latest'
             }
         }
     }
