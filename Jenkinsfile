@@ -1,18 +1,15 @@
-pipipeline{
+pipeline{
     agent any
     stages{
-        stage("GitHub checkout....") {
-
+         stage("GitHub checkout") {
             steps {
-
                 script {
-
  
                     git branch: 'main', url: 'https://github.com/Docalexix/Python-Flask.git' 
                 }
             }
         }
-        stage("Build docker connecting....."){
+        stage("Build docker on going"){
             steps{
                 sh 'printenv'
                 sh 'git version'
@@ -23,16 +20,16 @@ pipipeline{
             steps{
 
                script {
-                
                   
-                 withCredentials([string(credentialsId: 'DOCKERID', variable: 'DOCKERID')]) {
-                    sh 'docker login -u Docalexix -p ${DOCKERID}'
+                 withCredentials([string(credentialsId: 'dockerID', variable: 'dockerID')]) {
+                    sh 'docker login -u Docalexix -p ${dockerID}'
             }
               sh 'docker push Docalexix/silverimg:latest'
             }
         }
     }
-    
-      }
-
+    }
 }
+
+    
+
