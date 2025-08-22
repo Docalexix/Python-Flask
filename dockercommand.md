@@ -39,3 +39,11 @@ docker stop <imageID>
 ### command to build a container and put an image inside it
 docker run --name alex-docker -dp 5001:5001 Docalexix/yellowimg 
 
+### how to install docker on jenkins
+sudo apt  install docker.io
+
+### how to give permission to docker
+sudo usermod -aG docker ${USER}
+
+### to check if docker is running on the system
+sudo systemctl status docker

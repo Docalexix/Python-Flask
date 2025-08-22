@@ -21,8 +21,8 @@ pipeline{
 
                script {
                   
-                 withCredentials([string(credentialsId: 'dockerID', variable: 'dockerID')]) {
-                    sh 'docker login -u Docalexix -p ${dockerID}'
+                 withCredentials([string(credentialsId: 'alexID', variable: 'alexID')]) {
+                    sh 'docker login -u Docalexix -p ${alexID}'
             }
               sh 'docker push Docalexix/silverimg:latest'
             }
